@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="">
+        <label for="nombre completo">Nombre completo: </label>
+        <input type="text" id="nombre completo" name="nombreC" placeholder="introduzca su nombre">
+        <br>
+        <label for="clave">Password: </label>
+        <input type="password" id="clave" name="password" placeholder="introduzca su clave">
+        <br>
+        <input type="submit" id="login" name="login" value="Enviar">
+        <input type="reset" id="anular" name="anular" value="Cancelar">
+        <br>
+        <label for="comentarios">Comentarios</label> <br>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea><br>
+        <fieldset>
+            <legend>Sexo</legend>
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="masculino" value="m" name="sexo" checked>
+            <label for="femenino">Femenino</label>
+            <input type="radio" id="femenino" value = "f" name="sexo" required> <br>
+        </fieldset>
+        <fieldset>
+            <legend>Lenguajes de Programación</legend>
+            Seleccione el o los lenguajes que domina: <br>
+            <input type="checkbox">Java<br>
+            <input type="checkbox">Python<br>
+            <input type="checkbox">JavaScript<br>
+            <input type="checkbox">C++<br>
+        </fieldset>
+        <br>
+        <select name="ciudades" id="ciudades">
+            <option value="1">Barranquilla</option>
+            <option value="2">Cali</option>
+            <option value="3">Medellín</option>
+            <option value="4">Bogotá</option>
+        </select>
+        <br>
+        <select name="ciudades[]" id="ciudades" multiple size="2">
+            <option value="1">Barranquilla</option>
+            <option value="2">Cali</option>
+            <option value="3">Medellín</option>
+            <option value="4">Bogotá</option>
+        </select>
+        
+    </form>
+    
+</body>
+</html>
