@@ -1,0 +1,60 @@
+#Cerrar{
+    color:red;
+    float: right;
+
+}
+#btnVendedores{
+    position: absolute;
+        top:  50%;
+        left: 10%;
+
+}
+#btnProductos{
+    position: absolute;
+    top:  50%;
+    left: 21%;
+    
+    
+}
+#btnVentas{
+    position: absolute;
+    top:  50%;
+    left: 31%;
+   
+
+}
+#btnHistorial{
+    position: absolute;
+    top:  50%;
+    left: 39%    
+}
+#contenido{
+    margin-top: 4%;
+
+}
+#btnActualizar{
+    position: absolute;
+        top:  10%;
+        left: 80%;
+    
+}
+#btnEliminar{
+    position: absolute;
+    top:  10%;
+    left: 88%;
+ 
+
+}
+#btnAgregar{
+    margin-top: 2%;
+    position: absolute;
+    left: 10% 
+}
+#enlacevolver{
+    margin-top: 8%;
+    
+}
+#RegistrarProductos{
+    text-align: center;
+    color: rgb(10, 10, 10);
+}
