@@ -13,8 +13,7 @@ import ventaheladosciclo3.utils.JDBCUtilities;
 public class VendedoresDao {
     public List<VendedoresVo> listar() throws SQLException {
         List<VendedoresVo> result = new ArrayList<VendedoresVo>();
-        Connection conn = (Connection) new JDBCUtilities();
-        ((JDBCUtilities) conn).establecerConexion();
+        Connection conn = JDBCUtilities.establecerConexion();
         Statement stm = null;
         ResultSet rs = null;
         String consulta = "select cedula, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefono from vendedores";
@@ -23,16 +22,17 @@ public class VendedoresDao {
             rs = stm.executeQuery(consulta);
             while (rs.next()) {
                 VendedoresVo vo = new VendedoresVo();
+
                 vo.setCedula(rs.getInt("cedula"));
                 vo.setPrimer_nombre(rs.getString("primer_nombre"));
                 vo.setSegundo_nombre(rs.getString("segundo_nombre"));
                 vo.setPrimer_apellido(rs.getString("primer_apellido"));
                 vo.setSegundo_apellido(rs.getString("segundo_apellido"));
-                vo.setTelefono(rs.getBigDecimal("telefono"));
+                vo.setTelefono(rs.getLong("telefono"));
                 result.add(vo);
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println(e.getMessage());
         } finally {
             if (rs != null) {
                 rs.close();

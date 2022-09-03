@@ -1,6 +1,5 @@
 package ventaheladosciclo3.model.vo;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class VendedoresVo {
@@ -10,10 +9,11 @@ public class VendedoresVo {
     private String segundo_nombre;
     private String primer_apellido;
     private String segundo_apellido;
-    private BigDecimal telefono;
+    private long telefono;
     private int diaNacimiento;
     private int mesNacimiento;
     private int anioNacimiento;
+    private String estado;
 
     public int getId() {
         return id;
@@ -63,11 +63,11 @@ public class VendedoresVo {
         this.segundo_apellido = segundo_apellido;
     }
 
-    public BigDecimal getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(BigDecimal telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 
@@ -98,4 +98,20 @@ public class VendedoresVo {
     public String nombreCompleto() {
         return primer_nombre + " " + segundo_nombre + " " + primer_apellido + " " + segundo_apellido;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "\t" + cedula + " " + primer_nombre + " " +
+                segundo_nombre + " " +
+                primer_apellido + " " + segundo_apellido + " " + telefono + "\n";
+    }
+
 }

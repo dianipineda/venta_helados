@@ -7,6 +7,7 @@ public class ProductosVo {
     private double precioAdmin;
     private double precioVendedor;
     private double precioPublico;
+    private String estado;
 
     public int getId() {
         return id;
@@ -54,6 +55,20 @@ public class ProductosVo {
 
     public void setPrecioPublico(double precioPublico) {
         this.precioPublico = precioPublico;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "\t" + cod + " " + descripcion + " " + precioAdmin + " " + precioVendedor
+                + " " + precioPublico + "\n";
     }
 
 }

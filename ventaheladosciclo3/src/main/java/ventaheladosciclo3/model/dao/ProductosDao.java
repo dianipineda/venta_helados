@@ -13,11 +13,10 @@ import ventaheladosciclo3.utils.JDBCUtilities;
 public class ProductosDao {
     public List<ProductosVo> listar() throws SQLException {
         List<ProductosVo> result = new ArrayList<ProductosVo>();
-        Connection conn = (Connection) new JDBCUtilities();
-        ((JDBCUtilities) conn).establecerConexion();
+        Connection conn = JDBCUtilities.establecerConexion();
         Statement stm = null;
         ResultSet rs = null;
-        String consulta = "select * from Productos";
+        String consulta = "select * from productos";
         try {
             stm = conn.createStatement();
             rs = stm.executeQuery(consulta);
@@ -48,16 +47,21 @@ public class ProductosDao {
         return result;
     }
 
-    public ProductosVo agregarNuevo() throws SQLException {
-
+    // TODO: Quedé aqui:
+    public ProductosVo agregarNuevo(int codigo, String descripcion, double pAdmin, double pVendedor, double pPublico,
+            String estado) throws SQLException {
+        Connection conn = JDBCUtilities.establecerConexion();
+        String consulta = "insert into productos (cod_producto, descripcion, precio_admin, precio_vendedor, precio_publico, estado) values (?, ?, ?, ?, ?, ?)";
         return null;
     }
 
     public ProductosVo eliminar() throws SQLException {
+        Connection conn = JDBCUtilities.establecerConexion();
         return null;
     }
 
     public ProductosVo actualizar() throws SQLException {
+        Connection conn = JDBCUtilities.establecerConexion();
         return null;
     }
 }

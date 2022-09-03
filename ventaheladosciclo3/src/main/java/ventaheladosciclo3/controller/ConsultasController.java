@@ -25,8 +25,9 @@ public class ConsultasController {
         return vendedoresDao.listar();
     }
 
+    // TODO: Quedé aqui:
     public ProductosVo agregarNuevoProducto() throws SQLException {
-        return productosDao.agregarNuevo();
+        return productosDao.agregarNuevo(0, null, 0, 0, 0, null);
     }
 
     public VendedoresVo agregarNuevoVendedor() throws SQLException {
