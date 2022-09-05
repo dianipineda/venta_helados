@@ -1,6 +1,7 @@
 package ventaheladosciclo3.model.vo;
 
 public class ProductosVo {
+    // Atributos:
     private int id;
     private int cod;
     private String descripcion;
@@ -9,6 +10,21 @@ public class ProductosVo {
     private double precioPublico;
     private String estado;
 
+    // Constructores:
+    public ProductosVo(int cod, String descripcion, double precioAdmin, double precioVendedor, double precioPublico) {
+        this.cod = cod;
+        this.descripcion = descripcion;
+        this.precioAdmin = precioAdmin;
+        this.precioVendedor = precioVendedor;
+        this.precioPublico = precioPublico;
+
+    }
+
+    public ProductosVo(int cod) {
+        this.cod = cod;
+    }
+
+    // Métodos:
     public int getId() {
         return id;
     }
