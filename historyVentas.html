@@ -5,61 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial de Ventas</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div>
-        <h1>Historial de Ventas diarias</h1>
-        
-    </div> 
-
-    <div class="container">
-        <input type="date" class= "form-control" id="Fecha de Nacimiento" name="Fecha de Nacimiento"> 
-    </div>
-
-    <div class="container">
-        <table class="table table-striped table-hover">
-            <thead class="table-light">
-                
+<body >
+    <div class="cuerpo">
+        <div>
+            <img class= "imagen" src="imagen.png">
+            <h1>Historial de Ventas diarias</h1>
+            
+        </div> 
+    
+        <div >
+            <input type="date" class= "form-control" id="Fecha de Nacimiento" name="Fecha de Nacimiento"> 
+        </div>
+    
+        <div class="tabla">
+            <table class="table table-striped table-hover">
+                <thead >
+                    
+                    
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre de Vendedor</th>
+                        <th>Venta </th>
+                        <th>Ganancia </th>
+                    </tr>
+                </thead>
+    
+                <tbody>
                 
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre de Vendedor</th>
-                    <th>Venta </th>
-                    <th>Ganancia </th>
+                    <td></td><td>VENDEDOR 1</td><td>2147483647</td><td>125364</td>
                 </tr>
-            </thead>
-
-            <tbody>
-            
-            <tr>
-                <td></td><td>VENDEDOR 1</td><td>2147483647</td><td>125364</td>
-            </tr>
-            <tr>
-                <td> </td><td>VENDEDOR 2</td><td>3402826538</td><td>1235645</td>
-            </tr>
-            <tr>
-                <td></td><td>VENDEDOR 3</td><td>3402826538</td><td>785964</td>
-            </tr>
-            </tbody>
-            <tfoot>
-
                 <tr>
-            
-                  <th>Total Venta Distribuidora</th>
-                  <th></th>
-                  <th>18255555</th>
-                  <th></th>
+                    <td> </td><td>VENDEDOR 2</td><td>3402826538</td><td>1235645</td>
                 </tr>
-              </tfoot>
-            
-        </table>
+                <tr>
+                    <td></td><td>VENDEDOR 3</td><td>3402826538</td><td>785964</td>
+                </tr>
+                </tbody>
+                <tfoot>
+    
+                    <tr>
+                
+                      <th>Total Venta Distribuidora</th>
+                      <th></th>
+                      <th>18255555</th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
+                
+            </table>
+        </div>
+        <p id="Volver" class="volver">Volver a las Pagina Principal</p>
+        <script>
+            document.getElementById("Volver").addEventListener("click", e=>{
+                window.location.href = "principal.html";
+            })
+       </script>
     </div>
-
-    <div>
-    <button type="submit" class="btn btn-primary">Volver a la pagina Principal</button>
-    </div>
+    
 </body>
 </html>
