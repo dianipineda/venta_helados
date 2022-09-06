@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 
 import ventaheladosciclo3.model.vo.ProductosVo;
 import ventaheladosciclo3.utils.JDBCUtilities;
+import ventaheladosciclo3.utils.ValidacionesYConfirmaciones;
 
 public class SQLProductosDao implements ProductosDao {
 
@@ -102,14 +103,12 @@ public class SQLProductosDao implements ProductosDao {
 
             // validar //! falta aplicar roll back
             if (validarQueNoEsteCod(cod.getCod()) == true) {
-                JOptionPane.showMessageDialog(null, "El producto ya existe en la base de datos",
-                        "Error al registrar producto", JOptionPane.INFORMATION_MESSAGE);
+                ValidacionesYConfirmaciones.validaExistenciaDeRegistro();
             }
             ;
             // Guardar cambios
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "El producto  fue agregado correctamente", "se creó un nuevo producto",
-                    JOptionPane.PLAIN_MESSAGE);
+            ValidacionesYConfirmaciones.notificacionDeCambiosRealizados();
         } catch (SQLException e) {
             new DAOException("Error: " + e.getMessage());
         } finally {
@@ -135,13 +134,11 @@ public class SQLProductosDao implements ProductosDao {
             ps.setInt(1, cod.getCod());
             // validar://! falta aplicar roll back
             if (validarQueSiEsteCod(cod.getCod()) == false) {
-                JOptionPane.showMessageDialog(null, "El producto no se encuentra en la base de datos",
-                        "Error al eliminar producto", JOptionPane.INFORMATION_MESSAGE);
+                ValidacionesYConfirmaciones.validaNoExistenciaDeRegistro();
             }
             // el sistema pide confirmacion al usuario sobre eliminar el registro: la
             // ! confirmacion no funciona
-            JOptionPane.showConfirmDialog(null, "estas seguro de eliminar este producto", "Confirmar cambios",
-                    JOptionPane.YES_NO_OPTION);
+            ValidacionesYConfirmaciones.confirmacionDeCambio();
             ps.executeUpdate();
         } catch (SQLException e) {
             new DAOException("Error: " + e.getMessage());
@@ -187,13 +184,9 @@ public class SQLProductosDao implements ProductosDao {
         return productos;
     }
 
-    // ! Modificar funciona parcialmente pues no puede sobrescribir constructores
-    // para mismo tipo de datos
+    // Modificar version 1
     @Override
-    public void modificar(ProductosVo cod, ProductosVo parametro, String campo) throws SQLException { // String
-
-        String updateQuery = "UPDATE productos set";
-
+    public void modificar(ProductosVo cod, Object parametro, String campo) throws SQLException {
         String editCod = "update productos set cod_producto = ? where cod_producto =?";
         String editDesc = "update productos set descripcion = ? where cod_producto =?";
         String editPAdmin = "update productos set precio_admin = ? where cod_producto= ?";
@@ -203,45 +196,55 @@ public class SQLProductosDao implements ProductosDao {
         conn = conectar();
         PreparedStatement ps = null;
         try {
+            if (validarQueSiEsteCod(cod.getCod()) == false) {
+                ValidacionesYConfirmaciones.validaNoExistenciaDeRegistro();
+            }
             switch (campo) {
                 case "cod_producto":
                     ps = conn.prepareStatement(editCod);
-                    ps.setInt(1, parametro.getCod());
+                    ps.setInt(1, Integer.parseInt(parametro.toString()));
                     ps.setInt(2, cod.getCod());
+                    ValidacionesYConfirmaciones.confirmacionDeCambio();
                     ps.executeUpdate();
                     break;
 
                 case "descripcion":
                     ps = conn.prepareStatement(editDesc);
-                    ps.setString(1, parametro.getDescripcion());
+                    ps.setString(1, String.valueOf(parametro));
                     ps.setInt(2, cod.getCod());
+                    ValidacionesYConfirmaciones.confirmacionDeCambio();
                     ps.executeUpdate();
                     break;
                 case "precio_admin":
                     ps = conn.prepareStatement(editPAdmin);
-                    ps.setDouble(1, parametro.getPrecioAdmin());
+                    ps.setDouble(1, Double.parseDouble(parametro.toString()));
                     ps.setInt(2, cod.getCod());
+                    ValidacionesYConfirmaciones.confirmacionDeCambio();
                     ps.executeUpdate();
                     break;
                 case "precio_vendedor":
                     ps = conn.prepareStatement(editPVend);
-                    ps.setDouble(1, parametro.getPrecioVendedor());
+                    ps.setDouble(1, Double.parseDouble(parametro.toString()));
                     ps.setInt(2, cod.getCod());
+                    ValidacionesYConfirmaciones.confirmacionDeCambio();
                     ps.executeUpdate();
                     break;
                 case "precio_publico":
                     ps = conn.prepareStatement(editPpub);
-                    ps.setDouble(1, parametro.getPrecioPublico());
+                    ps.setDouble(1, Double.parseDouble(parametro.toString()));
                     ps.setInt(2, cod.getCod());
+                    ValidacionesYConfirmaciones.confirmacionDeCambio();
                     ps.executeUpdate();
                     break;
                 case "estado":
                     ps = conn.prepareStatement(editEst);
-                    ps.setString(1, parametro.getEstado());
+                    ps.setString(1, String.valueOf(parametro));
                     ps.setInt(2, cod.getCod());
+                    ValidacionesYConfirmaciones.confirmacionDeCambio();
                     ps.executeUpdate();
                     break;
             }
+            ValidacionesYConfirmaciones.notificacionDeCambiosRealizados();
 
         } catch (Exception e) {
             new DAOException("Error: " + e.getMessage());
@@ -255,7 +258,7 @@ public class SQLProductosDao implements ProductosDao {
         }
     }
 
-    // TODO: Quedé aquí:
+    // TODO: modificar versión 2 alternativa de modificar:
     public void editar(ProductosVo cod, HashMap<String, Object> parametros) throws DAOException, SQLException {
         String consulta = "update productos set";
         conn = conectar();
@@ -281,7 +284,8 @@ public class SQLProductosDao implements ProductosDao {
         // updateQuery.concat("WHERE cod_producto = ?");
     }
 
-    // ? funcion utilizada para editar (version 2 de modificar)
+    // * función ok
+    // TODO: para ser utilizada en función editar de arriba
     private List<ProductosVo> getProducto(int cod) throws SQLException {
         // TODO Auto-generated method stub
         List<ProductosVo> producto = new ArrayList<ProductosVo>();
