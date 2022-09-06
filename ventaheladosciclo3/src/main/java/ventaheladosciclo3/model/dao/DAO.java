@@ -10,6 +10,6 @@ public interface DAO<C> {
 
     List<C> listar() throws DAOException, SQLException;
 
-    void modificar(C p) throws DAOException;
+    void modificar(C p, C p2, String campo) throws DAOException, SQLException;
 
 }

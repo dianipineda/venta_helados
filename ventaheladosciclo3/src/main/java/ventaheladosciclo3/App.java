@@ -11,11 +11,14 @@ import ventaheladosciclo3.model.vo.ProductosVo;
 public class App {
     public static void main(String[] args) throws SQLException {
         SQLDAOManager manager = new SQLDAOManager();
-        // manager.getProductosDao()
-        // .agregarNuevo(new ProductosVo(12345, "PRODUCTO PRUEBA", 1800.0, 2000.0,
+        // manager.getProductosDao().agregarNuevo(new ProductosVo(12345, "PRODUCTO
+        // PRUEBA", 1800.0, 2000.0,
         // 2500.0));
         // manager.getProductosDao().eliminar(new ProductosVo(12345));
-        System.out.println(manager.getProductosDao().listar());
+        // System.out.println(manager.getProductosDao().listar());
+        // manager.getProductosDao().modificar(new ProductosVo(161114), new
+        // ProductosVo("POLLET"), "descripcion");
+        // System.out.println(manager.getProductosDao().listar());
 
     }
 }

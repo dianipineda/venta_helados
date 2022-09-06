@@ -11,12 +11,14 @@ public class ProductosVo {
     private String estado;
 
     // Constructores:
-    public ProductosVo(int cod, String descripcion, double precioAdmin, double precioVendedor, double precioPublico) {
+    public ProductosVo(int cod, String descripcion, double precioAdmin, double precioVendedor, double precioPublico,
+            String estado) {
         this.cod = cod;
         this.descripcion = descripcion;
         this.precioAdmin = precioAdmin;
         this.precioVendedor = precioVendedor;
         this.precioPublico = precioPublico;
+        this.estado = estado;
 
     }
 
