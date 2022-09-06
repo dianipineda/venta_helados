@@ -21,6 +21,7 @@ body {
     box-sizing: border-box;
     padding: 70px 30px;
     border-radius: 10px;
+    box-shadow: 7px 13px 37px #000;
 }
 .contenedor .imagen{
     width: 100px;
