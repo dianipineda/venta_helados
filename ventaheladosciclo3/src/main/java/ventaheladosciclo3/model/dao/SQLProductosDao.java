@@ -8,9 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import javax.swing.JOptionPane;
-
 import ventaheladosciclo3.model.vo.ProductosVo;
 import ventaheladosciclo3.utils.JDBCUtilities;
 import ventaheladosciclo3.utils.ValidacionesYConfirmaciones;
