@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:900&display=swap");
+
+/*! botones a refactorizar*/
+.vapmp {
+  position: absolute;
+  top: 550px;
+  left: 24%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.gmp {
+  position: absolute;
+  top: 550px;
+  left: 37%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.vapmv {
+  position: absolute;
+  top: 725px;
+  left: 24%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.gmv {
+  position: absolute;
+  top: 725px;
+  left: 37%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.vap {
+  position: absolute;
+  top: 705px;
+  left: 30%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.vaprv {
+  position: absolute;
+  top: 725px;
+  left: 24%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.grv {
+  position: absolute;
+  top: 725px;
+  left: 37%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.vaprp {
+  position: absolute;
+  top: 480px;
+  left: 30%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 185px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  height: 30px;
+}
+.grp {
+  position: absolute;
+  top: 480px;
+  left: 45%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  height: 30px;
+}
+.toreset {
+  position: absolute;
+  top: 480px;
+  left: 57.55%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 185px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  height: 30px;
+  border: none;
+}
+
+#EliP {
+  position: absolute;
+  top: 180px;
+  left: 52%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+#ActP {
+  position: absolute;
+  top: 180px;
+  left: 64%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.vapp {
+  position: absolute;
+  top: 525px;
+  left: 24%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.vaphv {
+  position: absolute;
+  top: 467px;
+  left: 27%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.vapv {
+  position: absolute;
+  top: 555px;
+  left: 24%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.av {
+  position: absolute;
+  top: 555px;
+  left: 36%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+#elv {
+  position: absolute;
+  top: 249px;
+  left: 67%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+#actv {
+  position: absolute;
+  top: 249px;
+  left: 55%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+#Vendedores {
+  position: absolute;
+  top: 195px;
+  left: 22%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+#cuentavendedores {
+  position: absolute;
+  top: 160px;
+  left: 22%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.vapvd {
+  position: absolute;
+  top: 620px;
+  left: 22%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.gvd {
+  position: absolute;
+  top: 620px;
+  left: 33%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.volver {
+  padding: 0;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.registro {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+.sundo {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.boton2 {
+  position: absolute;
+  top: 100%;
+  left: 19%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+.guardar {
+  position: absolute;
+  top: 100%;
+  left: 34%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  border: rgb(245, 225, 187);
+  font-size: 18px;
+  font-family: open sans;
+}
+#Cerrar {
+  color: red;
+  float: right;
+}
+#btnVendedores {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+#btnProductos {
+  position: absolute;
+  top: 50%;
+  left: 21%;
+}
+#btnVentas {
+  position: absolute;
+  top: 50%;
+  left: 31%;
+}
+#btnHistorial {
+  position: absolute;
+  top: 50%;
+  left: 39%;
+}
+#contenido {
+  margin-top: 4%;
+}
+#btnActElim {
+  position: relative;
+  top: 200px;
+  left: 60%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 4px;
+  text-decoration: none;
+  width: 95px;
+  text-align: center;
+  cursor: pointer;
+  border: rgb(245, 225, 187);
+  font-size: 18px;
+  font-family: open sans;
+}
+
+#btnAgregar {
+  margin-top: 2%;
+  position: absolute;
+  left: 10%;
+  background-color: auto rgb(245, 225, 187);
+  color: #000;
+  border-radius: 4px;
+  text-decoration: none;
+  width: 95px;
+  text-align: center;
+  cursor: pointer;
+  border: rgb(245, 225, 187);
+  font-size: 18px;
+  font-family: open sans;
+}
+.volver {
+  font-size: 18px;
+  font-family: open sans;
+  position: absolute;
+  margin-top: 2%;
+  left: 10%;
+  background-color: rgb(245, 225, 187);
+  color: #000;
+  border-radius: 4px;
+  text-decoration: none;
+  width: 95px;
+  text-align: center;
+  cursor: pointer;
+  border: rgb(245, 225, 187);
+}
+/*! botones a refactorizar*/
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: auto;
+  background-color: rosybrown;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='40' viewBox='0 0 24 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c5.523 0 10-4.477 10-10V0C4.477 0 0 4.477 0 10v30zm22 0c-5.523 0-10-4.477-10-10V0c5.523 0 10 4.477 10 10v30z' fill='%23a8e6ea' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  font-family: open sans;
+  height: 100vh;
+}
+
+/*?Index*/
+.botonIndex {
+  color: black;
+  border: none;
+  display: block;
+  width: 60%;
+  height: 20%;
+  border-radius: 10px;
+  background: rgb(245, 225, 187);
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-block: 20px;
+  margin-left: 45px;
+}
+.contenedorIndex {
+  width: 320px;
+  height: 420px;
+  background-color: rosybrown;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  border-radius: 10px;
+  box-shadow: 7px 13px 37px #000;
+}
+.contenedorIndex .imagen {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.contenedorIndex h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+
+.contenedorIndex input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.contenedorIndex input[type="text"],
+.contenedorIndex input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #000;
+  font-size: 25px;
+}
+/*?Index*/
+
+/*?Contenedores*/
+.contenedorProductoFormCrear {
+  margin: 60px auto;
+  width: 900px;
+  height: 380px;
+  background-color: rosybrown;
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.contenedorVendedorFormCrear {
+  margin: 60px auto;
+  width: 900px;
+  height: 530px;
+  background-color: rosybrown;
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.contenedorProductoFormEditar {
+  margin: 60px auto;
+  width: 900px;
+  height: 440px;
+  background-color: rosybrown;
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.contenedorVendedorFormEditar {
+  margin: 60px auto;
+  width: 900px;
+  height: 560px;
+  background-color: rosybrown;
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.contenedorListar {
+  margin: 60px auto;
+  height: auto;
+  background-color: rosybrown;
+  box-sizing: border-box;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 7px 13px 37px #000;
+}
+/*?Contenedores*/
+
+/*?Fuentes de Letra*/
+.fontLabel {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: right;
+  font-family: "open-sans";
+}
+
+.fontInput {
+  font-size: 25px;
+  font-weight: normal;
+  text-align: left;
+  font-family: "open-sans";
+  text-shadow: #fff;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 45px;
+  color: black;
+  font-weight: bold;
+  font-family: "Muli", sans-serif;
+  text-shadow: 1px 1px 2px white, 0 0 2em white, 0 0 0.2em white;
+}
+/*?Fuentes de Letra*/
+
+/*?ajustes detallados en inputs*/
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 0;
+}
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 2.3px solid green;
+}
+input[type="radio"] {
+  border: 0px;
+  width: 50%;
+  height: 1.5em;
+}
+/*?ajustes detallados en inputs*/

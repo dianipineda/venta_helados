@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribuidora de helados</title>
+    <link rel="icon" type="image/png" href="../imagen.png" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
+  <body>
+    <div class="contenedorIndex">
+      <img class="imagen" src="../static/imagen.png" />
+      <h1>Inicio de sesion</h1>
+      <br></br>
+      <form th:action="@{/login_usuario}" th:object="${usuarioModel}">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          placeholder=" Nombre"
+          th:field="*{nombre}"
+          required
+        />
+        <!-- contraceña-->
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          placeholder=" Contraseña"
+          th:field="*{password}"
+          required
+          minlength="8"
+          maxlength="15"
+        />
+
+        <!--boton-->
+      </form>
+      <button class="botonIndex">Ingresar</button>
+    </div>
+  </body>
+</html>

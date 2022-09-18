@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <link rel="icon" type="image/png" href="../imagen.png" />
+        <link rel="stylesheet" href="../style.css" type="text/css">    
+    </head>
+
+    <body>
+        <p></p>
+        <div>
+            <h1>Bienvenido(a)</h1>
+        </div>
+        <br></br>
+        <div>            
+            <img class= "imagen" src="imagen.png">          
+        </div>
+        <div>
+            <p id="cerrar" class ="grp" >Cerrar sesion</p> 
+            </svg> 
+            <script>
+                document.getElementById("cerrar").addEventListener("click", e=>{
+                window.location.href = "index.html";
+                })
+            </script>
+
+        <button type="submit">Productos</button>
+        <button type="submit">Vendedores</button>
+        <button type="submit">Venta Diaria</button>
+        <button type="submit">Consultar Ventas</button>
+        
+        </div>
+
+        
+    </body>
+</html>

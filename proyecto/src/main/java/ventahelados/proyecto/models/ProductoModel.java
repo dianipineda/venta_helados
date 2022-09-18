@@ -10,17 +10,17 @@ import javax.persistence.*;
 public class ProductoModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false, updatable = false)
+    @Column(unique = true, nullable = false)
     private Integer id;
-    @Column(name = "cod_producto", unique = true, nullable = false, updatable = false)
+    @Column(name = "cod_producto", unique = true, nullable = false)
     private Integer codigo;
-    @Column(name = "descripcion_producto", nullable = false, length = 25, updatable = false)
+    @Column(name = "descripcion_producto", nullable = false, length = 25)
     private String descripcion;
-    @Column(name = "precio_admin", nullable = false, scale = 1, updatable = false)
+    @Column(name = "precio_admin", nullable = false, scale = 1)
     private Double pAdmin;
-    @Column(name = "precio_vendedor", nullable = false, scale = 1, updatable = false)
+    @Column(name = "precio_vendedor", nullable = false, scale = 1)
     private Double pVendedor;
-    @Column(name = "precio_publico", nullable = false, scale = 1, updatable = false)
+    @Column(name = "precio_publico", nullable = false, scale = 1)
     private Double pPublico;
     @Column(name = "estado_producto", nullable = false, columnDefinition = "varchar(15) default 'activo'")
     private String estado;

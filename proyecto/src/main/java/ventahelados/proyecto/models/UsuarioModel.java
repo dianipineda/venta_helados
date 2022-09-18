@@ -11,8 +11,10 @@ public class UsuarioModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Integer id;
+    @Column(name = "nombre", nullable = false, length = 25)
     private String nombre;
-    private String email;
+    @Column(name = "password", nullable = false, length = 30)
+    private String password;
 
     public Integer getId() {
         return id;
@@ -30,12 +32,12 @@ public class UsuarioModel implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

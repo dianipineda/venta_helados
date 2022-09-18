@@ -28,8 +28,10 @@ public class VendedorModel implements Serializable {
     private Date cumpleAnios;
     @Column(name = "telefono", nullable = false)
     private long telefono;
-    @Column(name = "estado_vendedor", nullable = false, length = 10)
+
+    @Column(name = "estado_vendedor", nullable = false)
     private String estado;
+
     @OneToMany(mappedBy = "vendedor")
     Set<VentaModel> ventas;
 

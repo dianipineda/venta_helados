@@ -22,19 +22,19 @@ public class ProductoService {
         } else {
             ProductoModel p = new ProductoModel();
             p.setCodigo(producto.getCodigo());
-            p.setDescripcion(producto.getDescripcion());
+            p.setDescripcion(producto.getDescripcion().toUpperCase());
             p.setpAdmin(producto.getpAdmin());
             p.setpVendedor(producto.getpVendedor());
             p.setpPublico(producto.getpPublico());
-            p.setEstado("activo");
+            p.setEstado("activo".toLowerCase());
             return productoRepository.save(p);
 
         }
     }
 
     // *ok
-    public ArrayList<ProductoModel> obtenerProductos() {
-        return (ArrayList<ProductoModel>) productoRepository.findAll();
+    public ArrayList<ProductoModel> findAllActivos() {
+        return productoRepository.findAllActivos();
     }
 
     // *ok
@@ -47,7 +47,8 @@ public class ProductoService {
         return productoRepository.findByDescripcion(descripcion);
     }
 
-    // *ok
+    // *ok solo modifica estado, falta relacionarlo con un condicional para que
+    // edite los demas campos si no encuentra el codigo en ventas
     public void editarProducto(ProductoModel producto) {
         ProductoModel p = productoRepository.findByCodigo(producto.getCodigo());
         p.setEstado(producto.getEstado());

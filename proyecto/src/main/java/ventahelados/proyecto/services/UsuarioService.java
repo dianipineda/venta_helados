@@ -28,8 +28,26 @@ public class UsuarioService {
         return usuarioRepository.findById(id);
     }
 
-    public ArrayList<UsuarioModel> findByNombre(String nombre) {
+    // public ArrayList<UsuarioModel> findByNombre(String nombre) {
+    // return usuarioRepository.findByNombre(nombre);
+    // }
+
+    public UsuarioModel findByNombre(String nombre) {
         return usuarioRepository.findByNombre(nombre);
+    }
+
+    public UsuarioModel findByPassword(String password) {
+        return usuarioRepository.findByPassword(password);
+    }
+
+    public UsuarioModel isValid(UsuarioModel user) {
+        UsuarioModel u = new UsuarioModel();
+        UsuarioModel buscarNombre = usuarioRepository.findByNombre(user.getNombre());
+        UsuarioModel buscarPassword = usuarioRepository.findByPassword(user.getPassword());
+        if (buscarNombre != null && buscarPassword != null) {
+            return u;
+        }
+        return null;
     }
 
     public boolean eliminarUsuario(Integer id) {
