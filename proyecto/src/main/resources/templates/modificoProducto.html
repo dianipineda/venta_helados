@@ -16,72 +16,69 @@
             <h1>Modificar Producto</h1>
         </div>
         <br></br>
-        <div class="contenedorProductoFormEditar fontLabel" class="fontInput">
-            <form>
+        <div class="contenedorProductoFormEditar fontLabel">
+            <form action="#" th:action="@{/modificar_producto}" method="get" th:object="${productoModel}">
+            <input type="hidden" th:field="*{id}">
             <div class="m-0">
                 <div class="form-group row">
                     <label class="col-form-label col-4">Codigo:</label>
                     <div class="col-8">
-                        <input type="number" class="form-control" disabled> 
+                        <input type="number" class="form-control" th:field="*{codigo} " readonly/> 
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
                     <label class="col-form-label col-4">Descripcion:</label>
                     <div class="col-8">
-                        <input type="text" class="form-control" disabled>
+                        <input type="text" class="form-control" th:field="*{descripcion}"readonly/>
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
                     <label class = "col-form-label col-4">Precio al Distribuidor:</label>
                     <div class="col-8">
-                        <input type="number" step=any id="totalAmt" class= "form-control" disabled>
+                        <input type="number" step=any id="totalAmt" class= "form-control" th:field="*{pAdmin}"readonly/>
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
                     <label class = "col-form-label col-4">Precio al vendedor:</label>
                     <div class="col-8">
-                        <input type="number" step=any id="totalAmt" class= "form-control" disabled>
+                        <input type="number" step=any id="totalAmt" class= "form-control" th:field="*{pVendedor}"readonly/>
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
                     <label class = "col-form-label col-4">Precio al Público:</label>
                     <div class="col-8">
-                        <input type="number" step=any id="totalAmt" class= "form-control" disabled>
+                        <input type="number" step=any id="totalAmt" class= "form-control" th:field="*{pPublico}"readonly/>
                     </div>
                     <p></p>
                 </div> 
                 <div class="form-group row">             
                     <label class = "col-form-label col-4">Estado:</label>
                     <div class="col-3">
-                        <input type="text" class= "form-control">
+                        <input type="text" class= "form-control" th:field="*{estado}" readonly/>
                     </div>
                     <div class="col-form-label col py-xxl-0">                          
                         <div class="col-form-label form-check-inline">
-                            <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
                             <label class="form-check-label" for="inlineRadio1">Activo</label>
                         </div>
                     </div>
                     <div class="col-form-label col py-xxl-0"> 
                         <div class="col-form-label form-check-inline">
-                            <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
                             <label class="form-check-label" for="inlineRadio2">Inactivo</label>
                         </div>
                     </div>
-                </div>                        
-                    </div>
+                </div>
                 <p></p>
-                </div>
-                </div>
-                <button type="submit">Guardar</button>
-                <button type="submit">Volver al inicio</button>
-                </form>
-    
-    
-            </div>            
+            </form>  
+            <button class= "botonvolveralinicio" type="submit">Guardar</button>
+            <a class= "botonvolveralinicio" th:href="@{'/lista_productos'}">Atrás</a>
+        </div>  
+                  
     
     </body>
 </html>

@@ -10,68 +10,41 @@
     <link rel="icon" type="image/png" href="../imagen.png" />
     <link rel="stylesheet" href="../style.css" type="text/css" />
 
-
-
 </head>
-
 <body>
     <p></p>
     <div>
         <h1>Venta Diaria</h1>
     </div>
     <br></br>
-    <div>        
-        <select name="Vendedores" id="Vendedores">
-            <option value="1">Vendedor A</option>
-            <option value="2">Vendedor B</option>
-            <option value="3">Vendedor C</option>
-            <option value="4">Vendedor D</option>
-            <option value="1">Vendedor A</option>
-            <option value="2">Vendedor B</option>
-            <option value="3">Vendedor C</option>
-            <option value="4">Vendedor D</option>
-            <option value="1">Vendedor A</option>
-            <option value="2">Vendedor B</option>
-            <option value="3">Vendedor C</option>
-            <option value="4">Vendedor D</option>
-            
-        </select>
-    </div>
-
-    <div>
-        <input type="submit" id="cuentavendedores" name="Cuenta de Vendedores" value="Cuenta Vendedores">
-    </div>
-    <div class="contenedorListar">
-        <table class="table table-striped table-hover">
-            <thead class="table-light">
+    <form th:action="@{/agregar_venta}" method="post" th:object="${ventaModel}">
+        <div>
+            <thead>
                 <tr>
                     <th>Producto</th>
                     <th>Cant Cargue</th>
-                    <th>Cant Recargue</th>
                     <th>Cant Devolucion</th>
                 </tr>
             </thead>
-                
-            <tr><td>Producto A</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+            <tbody>
+                <tr th:each="productoModel: ${listaProductos}">
+                    <td th:text="${productoModel.descripcion}">Descripcion</td>
+                    <td>
+                        <div>
+                            <input class="form-control" th:field="*{cantidadEntrega}" required/>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <input class="form-control" th:field="*{cantidadRecibe}" required/>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </div>
+        <button type="submit" class="botonvolveralinicio">Guardar</button>
+        <a class="botonvolveralinicio" th:href="@{'/principal'}">Atrás</a>
+    </form>
 
-            <tr><td>Producto B</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
-
-            <tr><td>Producto C</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
-
-            <tr><td>Producto D</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
-
-            <tr><td>Producto E</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
-            
-        </table>
-    </div>
-            <br>
-            <p id="ven" class="vapvd">Volver al principio</p>
-            <script>
-                document.getElementById("ven").addEventListener("click", e=>{
-                    window.location.href = "principal.html";
-                })
-            </script>
-
-            <button type="submit" class="gvd">Guardar</button>
 </body>
 </html>

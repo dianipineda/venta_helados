@@ -2,7 +2,6 @@ package ventahelados.proyecto.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import ventahelados.proyecto.models.VentaModel;
 import ventahelados.proyecto.repositories.VentaRepository;
 
@@ -20,4 +19,5 @@ public class VentaService {
         v.setCantidadRecibe(venta.getCantidadRecibe());
         ventaRepository.save(v);
     }
+
 }

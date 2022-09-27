@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ventahelados.proyecto.models.ProductoModel;
 import ventahelados.proyecto.repositories.ProductoRepository;
 
 @Service
+@Transactional
 public class ProductoService {
     @Autowired
     ProductoRepository productoRepository;
@@ -47,12 +49,20 @@ public class ProductoService {
         return productoRepository.findByDescripcion(descripcion);
     }
 
-    // *ok solo modifica estado, falta relacionarlo con un condicional para que
-    // edite los demas campos si no encuentra el codigo en ventas
+    public ProductoModel findById(Integer id) {
+        return productoRepository.findById(id).get();
+    }
+
+    // *ok
     public void editarProducto(ProductoModel producto) {
-        ProductoModel p = productoRepository.findByCodigo(producto.getCodigo());
-        p.setEstado(producto.getEstado());
+        ProductoModel p = productoRepository.getReferenceById(producto.getId());
+        p.setDescripcion(producto.getDescripcion().toUpperCase());
+        p.setpAdmin(producto.getpAdmin());
+        p.setpVendedor(producto.getpVendedor());
+        p.setpPublico(producto.getpPublico());
+        p.setEstado(producto.getEstado().toLowerCase());
         productoRepository.save(p);
+
     }
 
 }

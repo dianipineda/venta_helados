@@ -17,8 +17,8 @@
             <h1>Agregar nuevo Producto</h1>
         </div>
         <br></br>
-        <div class="contenedorProductoFormCrear fontLabel" class="fontInput">
-            <form th:action="@{/agregar_producto}" method="post" " th:object="${productoModel}">
+        <div class="contenedorProductoFormCrear fontLabel">
+            <form th:action="@{/agregar_producto}" method="post" th:object="${productoModel}">
             <div class="m-0">
                 <div class="form-group row">
                     <label class="col-form-label col-4">Codigo:</label>
@@ -53,17 +53,11 @@
                     <div class="col-8">
                         <input placeholder="Escribe el precio sugerido al público" type="number" step=any id="totalAmt" class= "form-control" th:field="*{pPublico}" required/>
                     </div>
-                    <input type="reset" class="toreset">
+                    <input type="reset" class="botonvolveralinicio">
                 </div>
             </div>
-            <p id="ven" class="vaprp">Volver al principio</p>
-            <script>
-                document.getElementById("ven").addEventListener("click", e=>{
-                    window.location.href = "principal.html";
-                })
-            </script>
-
-            <button type="submit" class="grp">Guardar</button>
+            <button type="submit" class="botonvolveralinicio">Guardar</button>
+            <a class="botonvolveralinicio" th:href="@{'/lista_productos'}">Atrás</a>
             </form>
 
 

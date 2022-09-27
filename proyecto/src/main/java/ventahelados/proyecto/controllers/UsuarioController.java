@@ -4,21 +4,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ventahelados.proyecto.models.UsuarioModel;
 import ventahelados.proyecto.services.UsuarioService;
 
 @Controller
-@RequestMapping()
+
 public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
 
-    @GetMapping("/login_usuario")
+    @GetMapping("/")
     public String login(Model model) {
-        model.addAttribute("usuarioModel", new UsuarioModel());
+        UsuarioModel usuario = new UsuarioModel();
+        model.addAttribute("usuarios", usuario);
         return "index";
+    }
+
+    @PostMapping("/usuarioLogin")
+    public String Loggeo(@ModelAttribute("usuarios") UsuarioModel usuario, RedirectAttributes attribute) {
+        UsuarioModel data = usuarioService.findByEmailAndPassword(usuario.getEmail(), usuario.getPassword());
+        if (data != null) {
+            return "principal";
+        } else {
+            attribute.addFlashAttribute("error", "correo o contraseña inválidos");
+            return "redirect:/";
+        }
+
+    }
+
+    @GetMapping("/principal")
+    public String principal() {
+        return "principal";
     }
 
 }

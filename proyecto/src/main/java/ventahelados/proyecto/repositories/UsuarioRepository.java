@@ -7,8 +7,5 @@ import ventahelados.proyecto.models.UsuarioModel;
 
 @Repository
 public interface UsuarioRepository extends CrudRepository<UsuarioModel, Integer> {
-    // public abstract ArrayList<UsuarioModel> findByNombre(String nombre);
-    public abstract UsuarioModel findByNombre(String nombre);
-
-    public abstract UsuarioModel findByPassword(String password);
+    public abstract UsuarioModel findByEmailAndPassword(String email, String password);
 }

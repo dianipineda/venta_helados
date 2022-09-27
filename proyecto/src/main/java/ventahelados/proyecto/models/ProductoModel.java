@@ -12,7 +12,7 @@ public class ProductoModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Integer id;
-    @Column(name = "cod_producto", unique = true, nullable = false)
+    @Column(name = "cod_producto", nullable = false)
     private Integer codigo;
     @Column(name = "descripcion_producto", nullable = false, length = 25)
     private String descripcion;
@@ -22,7 +22,7 @@ public class ProductoModel implements Serializable {
     private Double pVendedor;
     @Column(name = "precio_publico", nullable = false, scale = 1)
     private Double pPublico;
-    @Column(name = "estado_producto", nullable = false, columnDefinition = "varchar(15) default 'activo'")
+    @Column(name = "estado_producto", nullable = false)
     private String estado;
     @OneToMany(mappedBy = "producto")
     Set<VentaModel> ventas;

@@ -1,7 +1,6 @@
 package ventahelados.proyecto.models;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -13,7 +12,7 @@ public class VendedorModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Integer id;
-    @Column(name = "cedula_ciudadania", unique = true, nullable = false)
+    @Column(name = "cedula_ciudadania", nullable = false)
     private Integer cc;
     @Column(name = "primer_nombre", nullable = false, length = 15)
     private String nombre1;
@@ -24,10 +23,9 @@ public class VendedorModel implements Serializable {
     @Column(name = "segundo_apellido", nullable = false, length = 15)
     private String apellido2;
     @Column(name = "fecha_nacimiento", updatable = false, nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date cumpleAnios;
+    private String cumpleAnios;
     @Column(name = "telefono", nullable = false)
-    private long telefono;
+    private String telefono;
 
     @Column(name = "estado_vendedor", nullable = false)
     private String estado;
@@ -83,19 +81,19 @@ public class VendedorModel implements Serializable {
         this.apellido2 = apellido2;
     }
 
-    public Date getCumpleAnios() {
+    public String getCumpleAnios() {
         return cumpleAnios;
     }
 
-    public void setCumpleAnios(Date cumpleAnios) {
+    public void setCumpleAnios(String cumpleAnios) {
         this.cumpleAnios = cumpleAnios;
     }
 
-    public long getTelefono() {
+    public String getCelular() {
         return telefono;
     }
 
-    public void setTelefono(long telefono) {
+    public void setCelular(String telefono) {
         this.telefono = telefono;
     }
 

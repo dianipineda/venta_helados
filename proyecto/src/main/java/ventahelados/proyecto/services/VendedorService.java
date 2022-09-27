@@ -13,42 +13,49 @@ public class VendedorService {
     @Autowired
     VendedorRepository vendedorRepository;
 
-    public VendedorModel findByCc(Integer cc) {
-        return vendedorRepository.findByCc(cc);
+    public VendedorModel agregarVendedor(VendedorModel vendedor) {
+        VendedorModel buscar = vendedorRepository.findByCc(vendedor.getCc());
+        if (buscar != null) {
+            return null;
+        } else {
+            VendedorModel v = new VendedorModel();
+            v.setNombre1(vendedor.getNombre1().toUpperCase());
+            v.setNombre2(vendedor.getNombre2().toUpperCase());
+            v.setApellido1(vendedor.getApellido1().toUpperCase());
+            v.setApellido2(vendedor.getApellido2().toUpperCase());
+            v.setCc(vendedor.getCc());
+            v.setCelular(vendedor.getCelular());
+            v.setCumpleAnios(vendedor.getCumpleAnios());
+            v.setEstado("activo".toLowerCase());
+            return vendedorRepository.save(v);
+        }
     }
 
     public ArrayList<VendedorModel> findAllActivos() {
         return vendedorRepository.findAllActivos();
     }
 
-    public void agregarVendedor(VendedorModel vendedor) {
-        VendedorModel buscar = vendedorRepository.findByCc(vendedor.getCc());
-        VendedorModel v = new VendedorModel();
-        if (buscar == null) {
-            try {
-                v.setCc(vendedor.getCc());
-                v.setNombre1(vendedor.getNombre1().toUpperCase());
-                v.setNombre2(vendedor.getNombre2().toUpperCase());
-                v.setApellido1(vendedor.getApellido1().toUpperCase());
-                v.setApellido2(vendedor.getApellido2().toUpperCase());
-                v.setCumpleAnios(vendedor.getCumpleAnios());
-                v.setTelefono(vendedor.getTelefono());
-                v.setEstado("activo".toLowerCase());
-                vendedorRepository.save(v);
-            } catch (Exception e) {
-                // TODO: handle exception
-            }
-        } else {
-            System.err.println("error");
-        }
+    public VendedorModel findByCc(Integer cc) {
+        return vendedorRepository.findByCc(cc);
+    }
 
+    public VendedorModel findById(Integer id) {
+        return vendedorRepository.findById(id).get();
     }
 
     // *ok solo modifica estado, falta relacionarlo con un condicional para que
     // edite los demas campos si no encuentra la cedula de venta
     public void editarVendedor(VendedorModel vendedor) {
-        VendedorModel v = vendedorRepository.findByCc(vendedor.getCc());
-        v.setEstado(vendedor.getEstado());
+        VendedorModel v = vendedorRepository.getReferenceById(vendedor.getId());
+        v.setNombre1(vendedor.getNombre1().toUpperCase());
+        v.setNombre2(vendedor.getNombre2().toUpperCase());
+        v.setApellido1(vendedor.getApellido1().toUpperCase());
+        v.setApellido2(vendedor.getApellido2().toUpperCase());
+        v.setCc(vendedor.getCc());
+        v.setCelular(vendedor.getCelular());
+        v.setCumpleAnios(vendedor.getCumpleAnios());
+        v.setEstado(vendedor.getEstado().toLowerCase());
         vendedorRepository.save(v);
     }
+
 }

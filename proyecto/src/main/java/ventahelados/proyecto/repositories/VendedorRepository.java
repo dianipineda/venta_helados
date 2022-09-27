@@ -10,9 +10,13 @@ import ventahelados.proyecto.models.VendedorModel;
 
 @Repository
 public interface VendedorRepository extends JpaRepository<VendedorModel, Integer> {
-    public abstract VendedorModel findByCc(Integer cc);
 
-    @Query("select v from VendedorModel v where v.estado = 'activo'")
+    @Query(value = "select * from vendedores where estado_vendedor = 'activo';", nativeQuery = true)
+
     public abstract ArrayList<VendedorModel> findAllActivos();
+
+    public VendedorModel getReferenceById(Integer id);
+
+    public abstract VendedorModel findByCc(Integer cc);
 
 }

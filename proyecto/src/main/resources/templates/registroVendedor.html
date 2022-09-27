@@ -16,69 +16,65 @@
             <h1>Agregar nuevo Vendedor</h1>
         </div>
         <br></br>
-        <div class="contenedorVendedorFormCrear fontLabel" class="fontInput">
+        <div class="contenedorVendedorFormCrear fontLabel">
+            <form th:action="@{/agregar_vendedor}" method="post" th:object="${vendedorModel}">
+            <div class="m-0">
                 <div class="form-group row">
-                    <label class="col-form-label col-4 fontlabel">Primer Nombre:</label>
+                    <label class="col-form-label col-4">Primer Nombre:</label>
                     <div class="col-8">
-                        <input placeholder="Escribe el primer nombre del vendedor" type="text" class="form-control fontInput"> 
+                        <input placeholder="Escribe el primer nombre del vendedor" type="text" class="form-control" th:field="*{nombre1}" required/> 
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
-                    <label class="col-form-label col-4 fontlabel">Segundo Nombre:</label>
+                    <label class="col-form-label col-4">Segundo Nombre:</label>
                     <div class="col-8">
-                        <input placeholder="Escribe el segundo nombre del vendedor" type="text" class="form-control fontInput">
+                        <input placeholder="Escribe el segundo nombre del vendedor" type="text" class="form-control" th:field="*{nombre2}" required/>
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
-                    <label class = "col-form-label col-4 fontlabel">Primer Apellido:</label>
+                    <label class="col-form-label col-4">Primer Apellido:</label>
                     <div class="col-8">
-                        <input placeholder="Escribe el primer apellido del vendedor" type="text" class="form-control fontInput">
+                        <input placeholder="Escribe el primer apellido del vendedor" type="text" class="form-control" th:field="*{apellido1}" required/>
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
-                    <label class = "col-form-label col-4 fontlabel">Segundo Apellido:</label>
+                    <label class="col-form-label col-4">Segundo Apellido:</label>
                     <div class="col-8">
-                        <input placeholder="Escribe el segundo apellido del vendedor" type="text" class="form-control fontInput">
+                        <input placeholder="Escribe el segundo apellido del vendedor" type="text" class="form-control" th:field="*{apellido2}" required/>
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
-                    <label class = "col-form-label col-4 fontlabel">Cédula:</label>
+                    <label class = "col-form-label col-4">Cédula:</label>
                     <div class="col-8">
-                        <input placeholder="Digita la cédula del vendedor" type="number" class= "form-control fontInput">
+                        <input placeholder="Digita la cédula del vendedor" type="number" step=any id="totalAmt" class= "form-control" th:field="*{cc}" required/>
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
-                    <label class = "col-form-label col-4 fontlabel">Celular:</label>
+                    <label class = "col-form-label col-4">Celular:</label>
                     <div class="col-8">
-                        <input placeholder="###-###-####" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class= "form-control fontInput">
+                        <input placeholder="Digita el Celular del Vendedor" type="number" minlength="10" oninput="if(value.length>10)value=value.slice(0,10)" class= "form-control" th:field="*{celular}" required/>
                     </div>
                 <p></p>
                 </div>
                 <div class="form-group row">
-                    <label class = "col-form-label col-4 fontlabel">Fecha Nacimiento:</label>
+                    <label class = "col-form-label col-4">Fecha de Nacimiento:</label>
                     <div class="col-8">
-                        <input placeholder="Elige la fecha de nacimiento del vendedor" type="date" class= "form-control fontInput">
+                        <input placeholder="dd/mm/aaaa" type="date" class= "form-control" th:field="*{cumpleAnios}" required/>
                     </div>
-                <p></p>
+                    <input type="reset" class="botonvolveralinicio">
                 </div>
-                    <input type="reset" class="toreset">
-                </div>
-            
-            /*termina aqui*/
-                <br>
-                <p id="ven" class="vaprv">Volver al principio</p>
-                <script>
-                    document.getElementById("ven").addEventListener("click", e=>{
-                        window.location.href = "principal.html";
-                    })
-                </script>
+            </div>
+            <button type="submit" class="botonvolveralinicio">Guardar</button>
+            <a class="botonvolveralinicio" th:href="@{'/lista_vendedores'}">Atrás</a>
+            </form>
 
-                <button type="submit" class="grv">Guardar</button>
-            <br>
+        </div> 
+
+
     </body>
 </html>

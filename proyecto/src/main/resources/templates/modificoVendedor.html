@@ -18,86 +18,87 @@
             <h1>Modificar Vendedor</h1>
         </div>
         <br></br>
-        <div class="contenedorVendedorFormEditar fontLabel" class="fontInput">
-            <form>
-                <div class="m-0">
-                    <div class="form-group row">
-                        <label class="col-form-label col-4">Primer Nombre:</label>
-                        <div class="col-8">
-                            <input type="text" class="form-control" disabled> 
-                        </div>
-                    <p></p>
+        <div class="contenedorVendedorFormEditar fontLabel">
+            <form action="#" th:action="@{/modificar_vendedor}" method="get" th:object="${vendedorModel}">
+            <input type="hidden" th:field="*{id}">
+            <div class="m-0">
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Primer Nombre:</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" th:field="*{nombre1} " readonly/> 
                     </div>
-                    <div class="form-group row">
-                        <label class="col-form-label col-4">Segundo Nombre:</label>
-                        <div class="col-8">
-                            <input type="text" class="form-control" disabled>
-                        </div>
-                    <p></p>
-                    </div>
-                    <div class="form-group row">
-                        <label class = "col-form-label col-4">Primer Apellido:</label>
-                        <div class="col-8">
-                            <input type="text" class= "form-control" disabled>
-                        </div>
-                    <p></p>
-                    </div>
-                    <div class="form-group row">
-                        <label class = "col-form-label col-4">Segundo Apellido:</label>
-                        <div class="col-8">
-                            <input type="text" class= "form-control" disabled>
-                        </div>
-                    <p></p>
-                    </div>
-                    <div class="form-group row">
-                        <label class = "col-form-label col-4">Cédula:</label>
-                        <div class="col-8">
-                            <input type="number" class= "form-control" disabled>
-                        </div>
-                        <p></p>
-                    </div>
-                    <div class="form-group row">
-                        <label class = "col-form-label col-4">Celular:</label>
-                        <div class="col-8">
-                            <input type="tel" class= "form-control" disabled>
-                        </div>
-                        <p></p>
-                    </div> 
-                    <div class="form-group row">
-                        <label class = "col-form-label col-4">Fecha de Nacimiento:</label>
-                        <div class="col-8">
-                            <input type="date" class= "form-control" disabled>
-                        </div>
-                        <p></p>
-                    </div> 
-                    <div class="form-group row">             
-                        <label class = "col-form-label col-4">Estado:</label>
-                        <div class="col-3">
-                            <input type="number" class= "form-control" disabled>
-                        </div>
-                        <div class="col-form-label col py-xxl-0">                          
-                            <div class="col-form-label form-check-inline">
-                                <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Activo</label>
-                            </div>
-                        </div>
-                        <div class="col-form-label col py-xxl-0"> 
-                            <div class="col-form-label form-check-inline">
-                                <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">Inactivo</label>
-                            </div>
-                        </div>
-                    </div>                        
-                </div>
                 <p></p>
                 </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Segundo Nombre:</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" th:field="*{nombre2} " readonly/> 
+                    </div>
+                <p></p>
                 </div>
-                <button type="submit">Guardar</button>
-                <button type="submit">Volver al inicio</button>
-            </form>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Primer Apellido:</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" th:field="*{apellido1}"readonly/>
+                    </div>
+                <p></p>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Segundo Apellido:</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" th:field="*{apellido2}"readonly/>
+                    </div>
+                <p></p>
+                </div>
+
+                <div class="form-group row">
+                    <label class = "col-form-label col-4">Cédula:</label>
+                    <div class="col-8">
+                        <input type="number" step=any id="totalAmt" class= "form-control" th:field="*{cc}"readonly/>
+                    </div>
+                <p></p>
+                </div>
+                <div class="form-group row">
+                    <label class = "col-form-label col-4">Celular:</label>
+                    <div class="col-8">
+                        <input type="number" step=any id="totalAmt" class= "form-control" th:field="*{celular}"readonly/>
+                    </div>
+                <p></p>
+                </div>
+                <div class="form-group row">
+                    <label class = "col-form-label col-4">Fecha de Nacimiento:</label>
+                    <div class="col-8">
+                        <input type="text" step=any id="totalAmt" class= "form-control" th:field="*{cumpleAnios}"readonly/>
+                    </div>
+                    <p></p>
+                </div> 
+                <div class="form-group row">             
+                    <label class = "col-form-label col-4">Estado:</label>
+                    <div class="col-3">
+                        <input type="text" class= "form-control" th:field="*{estado}"/>
+                    </div>
+                    <div class="col-form-label col py-xxl-0">                          
+                        <div class="col-form-label form-check-inline">
+                            <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
+                            <label class="form-check-label" for="inlineRadio1">Activo</label>
+                        </div>
+                    </div>
+                    <div class="col-form-label col py-xxl-0"> 
+                        <div class="col-form-label form-check-inline">
+                            <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+                            <label class="form-check-label" for="inlineRadio2">Inactivo</label>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+            </form>  
+            <button class= "botonvolveralinicio" type="submit">Guardar</button>
+            <a class= "botonvolveralinicio" th:href="@{'/lista_vendedores'}">Atrás</a>
+        </div>  
 
 
-        </div>            
 
     </body>
 </html>
