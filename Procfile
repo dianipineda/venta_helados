@@ -1,1 +1,1 @@
-web: java -jar target/proyectoheladosciclo3g54sub1-1.0.0.jar 
+web: java -jar target/proyectoheladosciclo3g54sub1-*.jar 
