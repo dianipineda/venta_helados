@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/demo-0.0.1-SNAPSHOT.jar --app proyectoheladosciclo3g54sub1
+web: java -Dserver.port=$PORT -war target/proyecto-0.0.1-SNAPSHOT.war
