@@ -1,1 +1,1 @@
-web: java -jar target/proyecto-*.jar 
+web: java -war target/proyecto-*.war 
