@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <link rel="icon" type="image/png" href="../imagen.png" />
+        <link rel="stylesheet" href="../style.css" type="text/css"> 
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        
+        <header>
+            <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+            rel="stylesheet"/>
+            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        </header>
+
+        <body>
+            <input type="checkbox" id="active" />
+            <label for="active" class="menu-btn"><span></span></label>
+            <div class="wrapper">
+              <ul class= "fontLabel">
+                <li><a th:href="@{'/lista_vendedores'}">Vendedores</a></li>
+                <li><a th:href="@{'/lista_productos'}">Productos</a></li>
+                <li><a th:href="@{'/view_registro_venta'}">Ventas</a></li>
+                <li><a href="#">Historial de Ventas</a></li>
+                
+              </ul>
+            </div>
+        </body>
+
+        <p></p>
+        <div>
+            <h1>Bienvenido(a)</h1>
+        </div>
+        <br></br>
+        <div>
+            <a class= "botonvolveralinicio" th:href="@{'/'}">Cerrar Sesion</a>      
+        </div>
+        
+    </body>
+</html>
