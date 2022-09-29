@@ -48,3 +48,5 @@ CREATE TABLE `ventas` (
 ) ENGINE=InnoDB;
 
 show tables;
+
+insert into usuarios (email, nombre, password) values ("misiontic@gmail.com", "tripulante", "misiontic2022");
