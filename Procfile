@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/dependency/proyecto-runner.jar --port $PORT target/*.war  
+web: java $JAVA_OPTS -jar target/proyecto-runner.jar --port $PORT target/*.war  
