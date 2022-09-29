@@ -1,1 +1,1 @@
-java $JAVA_OPTS -jar target/proyecto-*.jar --port $PORT target/proyecto-*.war 
+web: java $JAVA_OPTS -jar target/proyectoheladosciclo3g54sub1-*.jar --port $PORT target/proyectoheladosciclo3g54sub1-*.war  
