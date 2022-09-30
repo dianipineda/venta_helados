@@ -25,12 +25,13 @@ public class UsuarioController {
     }
 
     @PostMapping("/usuarioLogin")
-    public String Loggeo(@ModelAttribute("usuarios") UsuarioModel usuario, RedirectAttributes attribute) {
+    public String Login(@ModelAttribute("usuarios") UsuarioModel usuario, RedirectAttributes attribute) {
         UsuarioModel data = usuarioService.findByEmailAndPassword(usuario.getEmail(), usuario.getPassword());
         if (data != null) {
             return "principal";
         } else {
-            attribute.addFlashAttribute("error", "correo o contraseña inválidos");
+            attribute.addFlashAttribute("mensaje", "Correo y/o Contraseña no válidos, Intente Nuevamente");
+            attribute.addFlashAttribute("clase", "success");
             return "redirect:/";
         }
 

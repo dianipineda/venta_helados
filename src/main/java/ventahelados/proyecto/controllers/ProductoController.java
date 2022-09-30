@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ventahelados.proyecto.models.ProductoModel;
 import ventahelados.proyecto.services.ProductoService;
@@ -68,8 +69,10 @@ public class ProductoController {
 
     // *Proceso Modifico producto
     @RequestMapping(value = "/modificar_producto", method = RequestMethod.GET)
-    public String procesarEditarProducto(@ModelAttribute ProductoModel productoModel) {
+    public String procesarEditarProducto(@ModelAttribute ProductoModel productoModel, RedirectAttributes attribute) {
         productoService.editarProducto(productoModel);
+        attribute.addFlashAttribute("mensaje", "Estado de Producto Editado con Exito");
+        attribute.addFlashAttribute("class", "success");
         return "redirect:/lista_productos";
     }
 

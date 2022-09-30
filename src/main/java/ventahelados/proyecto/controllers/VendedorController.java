@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ventahelados.proyecto.models.VendedorModel;
 import ventahelados.proyecto.services.VendedorService;
@@ -58,8 +59,10 @@ public class VendedorController {
 
     // *Proceso Modifico Vendedor
     @RequestMapping(value = "/modificar_vendedor", method = RequestMethod.GET)
-    public String procesarEditarVendedor(@ModelAttribute VendedorModel vendedorModel) {
+    public String procesarEditarVendedor(@ModelAttribute VendedorModel vendedorModel, RedirectAttributes attribute) {
         vendedorService.editarVendedor(vendedorModel);
+        attribute.addFlashAttribute("mensaje", "Estado de Vendedor Editado con Exito.");
+        attribute.addFlashAttribute("clase", "success");
         return "redirect:/lista_vendedores";
     }
 

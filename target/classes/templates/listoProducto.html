@@ -14,7 +14,10 @@
     <div>
         <h1>Productos</h1>
     </div>
-    <br></br>
+    <div th:classappend="'alert-' + (${clase != null} ? ${clase} : info)" th:if="${mensaje != null}"
+      th:text="${mensaje}"
+      class="alert alert-success">
+    </div>    
 
     <div class="contenedorListar">
         <table class="table table-striped table-hover">
@@ -41,7 +44,7 @@
                     <td th:text="${productoModel.pPublico}">Precio al Publico</td>
                     <td th:text="${productoModel.estado}">Estado</td>
                     <td>
-                        <a class="botonvolveralinicio" th:href="@{'/view_edito_producto/' + ${productoModel.id}}">Editar</a>
+                        <a class="botoneditar" th:href="@{'/view_edito_producto/' + ${productoModel.id}}">Editar</a>
                     </td>
                 </tr>
 

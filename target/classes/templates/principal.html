@@ -11,35 +11,26 @@
     </head>
     
     <body>
-        
-        <header>
-            <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"/>
-            <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
-            rel="stylesheet"/>
-            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        </header>
 
-        <body>
-            <input type="checkbox" id="active" />
-            <label for="active" class="menu-btn"><span></span></label>
-            <div class="wrapper">
-              <ul class= "fontLabel">
-                <li><a th:href="@{'/lista_vendedores'}">Vendedores</a></li>
-                <li><a th:href="@{'/lista_productos'}">Productos</a></li>
-                <li><a th:href="@{'/view_registro_venta'}">Ventas</a></li>
-                <li><a href="#">Historial de Ventas</a></li>
-                
-              </ul>
-            </div>
-        </body>
-
-        <p></p>
-        <div>
-            <h1>Bienvenido(a)</h1>
-        </div>
-        <br></br>
         <div>
             <a class= "botonvolveralinicio" th:href="@{'/'}">Cerrar Sesion</a>      
+        </div>
+
+        <div>
+        <div class="contenedorMenu">
+            <img class="imagen" src="imagen.png" />
+            <h1>Menu</h1>
+            <br></br>
+        
+                <a class= "botonMenu" id="Productos"  th:href="@{'/lista_productos'}">Productos</a>      
+            
+                <a class= "botonMenu" id="Vendedores" th:href="@{'/lista_vendedores'}">Vendedores</a>      
+            
+                <a class= "botonMenu" id="Ventas" href="#">Ventas</a>  <br><br><br>    
+           
+                <a class= "botonMenu" id="botonHistorial" href="#">Historial de Ventas</a>  
+            
+        
         </div>
         
     </body>
