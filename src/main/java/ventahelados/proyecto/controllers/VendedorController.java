@@ -1,5 +1,6 @@
 package ventahelados.proyecto.controllers;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,10 +47,12 @@ public class VendedorController {
 
     // *form Edito Vendeddor
     @RequestMapping("/view_edito_vendedor/{id}")
-    public ModelAndView verEditoVendedor(@PathVariable(name = "id") int id) {
+    public ModelAndView verEditoVendedor(@PathVariable(name = "id") int id, Model model) {
         ModelAndView mav = new ModelAndView("modificoVendedor");
         VendedorModel v = vendedorService.findById(id);
         mav.addObject("vendedorModel", v);
+        List<String> listEstado = Arrays.asList("activo", "inactivo");
+        model.addAttribute("listEstado", listEstado);
         return mav;
     }
 

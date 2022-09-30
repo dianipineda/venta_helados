@@ -77,19 +77,9 @@
                 <div class="form-group row">             
                     <label class = "col-form-label col-4">Estado:</label>
                     <div class="col-3">
-                        <input type="text" class= "form-control" th:field="*{estado}"/>
-                    </div>
-                    <div class="col-form-label col py-xxl-0">                          
-                        <div class="col-form-label form-check-inline">
-                            <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
-                            <label class="form-check-label" for="inlineRadio1">Activo</label>
-                        </div>
-                    </div>
-                    <div class="col-form-label col py-xxl-0"> 
-                        <div class="col-form-label form-check-inline">
-                            <input class="form-check-input" style="width:40px" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
-                            <label class="form-check-label" for="inlineRadio2">Inactivo</label>
-                        </div>
+                        <select th:field="*{estado}" class= "form-control">
+                            <option th:each="p : ${listEstado}" th:value="${p}" th:text="${p}"/>
+                        </select>
                     </div>
                 </div>
                 <p></p>
