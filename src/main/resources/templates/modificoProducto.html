@@ -58,7 +58,7 @@
                 <div class="form-group row">             
                     <label class = "col-form-label col-4">Estado:</label>
                     <div class="col-3">
-                        <select th:field="*{estado}">
+                        <select th:field="*{estado}" class= "form-control">
                             <option th:each="p : ${listEstado}" th:value="${p}" th:text="${p}"/>
                         </select>
                     </div>
