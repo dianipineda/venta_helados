@@ -17,7 +17,7 @@
   text-align: center;
   cursor: pointer;
   margin-block: 40px;
-  margin-left: 60px;
+  margin-left: 90px;
 }
 .botonIndex:hover {
   opacity: 0.6;
@@ -188,6 +188,7 @@
   background-color: #dbabab;
   border-radius: 15px;
   border: 3px double #bc8f8f;
+  margin-left: 200px;
 }
 .botonMenu:hover {
   opacity: 0.2;
